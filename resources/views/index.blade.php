@@ -28,12 +28,12 @@
                                         <span class="music-published-date">{{@date_format($song->created_at,'d-m-Y')}}</span>
                                         <h2>{{$song->name}} - {{$song->singer->name}}</h2>
                                         <div class="music-meta-data">
-                                            <p>By <a href="#" class="music-author">Admin</a> 
+                                            <p>By <a href="#" class="music-author">Admin</a>
                                         </div>
                                         <!-- Music Player -->
                                         <div class="poca-music-player">
                                             <audio preload="auto" controls>
-                                                <source src="{{asset('storage/'.$song->url)}}">
+                                                <source src="{{$song->url}}">
                                             </audio>
                                         </div>
 

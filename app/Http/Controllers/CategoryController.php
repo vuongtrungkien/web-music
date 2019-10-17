@@ -14,4 +14,16 @@ class CategoryController extends Controller
         $this->categoryService = $categoryService;
 
     }
+
+    public function showPageAddCategory()
+    {
+        return view('admin.category.add');
+    }
+
+    public function storeCategory(Request $request)
+    {
+        $this->categoryService->create($request);
+        return back();
+    }
+
 }

@@ -7,6 +7,7 @@ namespace App\Http\Services\Impl;
 
 use App\Http\Repositories\Interfaces\SingerRepository;
 use App\Http\Services\Interfaces\SingerService;
+use App\Singer;
 
 class SingerServiceImpl implements SingerService
 {
@@ -30,7 +31,9 @@ class SingerServiceImpl implements SingerService
 
     public function create($data)
     {
-        // TODO: Implement create() method.
+       $singer = new Singer();
+       $singer->name = $data->name;
+       $this->singerRepository->create($singer);
     }
 
     public function update($data, $object)

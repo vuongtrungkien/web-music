@@ -9,6 +9,7 @@ class Song extends Model
 {
 
 
+
     public function playlist()
     {
         return $this->belongsToMany('App\Playlist');

@@ -10,7 +10,7 @@
     <title>@yield('title')</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{asset('./img/core-img/logo.png')}}">
+    <link rel="icon" href="./img/core-img/logo1.png">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="{{asset('style.css')}}">
@@ -19,13 +19,9 @@
 
 <body>
 @include('layouts.header')
+
 @yield('content')
-<!-- Preloader -->
-<div id="preloader">
-    <div class="preloader-thumbnail">
-        <img src="{{asset('./img/core-img/logo.png')}}" alt="">
-    </div>
-</div>
+
 
 
 

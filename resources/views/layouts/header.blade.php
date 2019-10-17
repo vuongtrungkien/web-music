@@ -6,7 +6,7 @@
             <nav class="classy-navbar justify-content-between" id="pocaNav">
 
                 <!-- Logo -->
-                <a class="nav-brand" href="{{route('index')}}"><img style="width: 70px; height: 70px" src="./img/core-img/logo.png" alt=""></a>
+                <a class="nav-brand" href="{{route('index')}}"><img style="width: 70px; height: 70px" src="{{asset('./img/core-img/logo.png')}}" alt=""></a>
 
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">

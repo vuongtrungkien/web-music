@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Repositories\Interfaces\ParametersInterface;
 use App\Http\Services\Interfaces\SongService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Date;
 
-class SongController extends Controller
+class SongController extends Controller implements ParametersInterface
 {
     protected $songService;
 
@@ -21,9 +22,13 @@ class SongController extends Controller
     public function getTopOne(Request $request)
     {
 
-        $songTopOne = $this->songService->getTopSongs(1);
+//        $songTopOne = $this->songService->getTopSongs(1);
+       $songTopOne = $this->songService->getSongRandom();
+        $songsNewVNI = $this->songService->getSongNew(ParametersInterface::VIETNAM);
 
-        return view('index', compact('songTopOne'));
+
+
+        return view('index', compact('songTopOne','songsNewVNI'));
     }
 
     public function store(Request $request){

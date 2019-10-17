@@ -19,6 +19,15 @@ class SongServiceImpl implements SongService
         $this->songRepository = $songRepository;
     }
 
+    public function getSongRandom()
+    {
+       return $this->songRepository->getSongRandom();
+    }
+
+    public function getSongNew($category){
+        return $this->songRepository->getSongNew($category);
+    }
+
     public function getAll()
     {
         return $this->songRepository->getAll();
@@ -31,7 +40,7 @@ class SongServiceImpl implements SongService
 
     public function getTopSongs($top)
     {
-     return $this->songRepository->getTopSongs($top);
+        return $this->songRepository->getTopSongs($top);
     }
 
     public function create($data)

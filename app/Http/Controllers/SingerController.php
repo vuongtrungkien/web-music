@@ -13,4 +13,24 @@ class SingerController extends Controller
     {
         $this->singerService = $singerService;
     }
+
+    public function showPageAddSinger()
+    {
+        return view('admin.singer.add');
+
+    }
+
+    public function storeSinger(Request $request)
+    {
+        $this->singerService->create($request);
+        return back();
+    }
+
+    public function showPageListSinger()
+    {
+        $singers = $this->singerService->getAll();
+        return view('admin.singer.list',compact('singers'));
+    }
+
+
 }

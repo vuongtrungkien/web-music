@@ -4,6 +4,7 @@
 namespace App\Http\Services\Impl;
 
 
+use App\Category;
 use App\Http\Repositories\Interfaces\CategoryRepository;
 use App\Http\Services\Interfaces\CategoryService;
 
@@ -29,7 +30,9 @@ class CategoryServiceImpl implements CategoryService
 
     public function create($data)
     {
-        // TODO: Implement create() method.
+        $category = new Category();
+        $category->name = $data->name;
+        $this->categoryRepository->create($category);
     }
 
     public function update($data, $object)

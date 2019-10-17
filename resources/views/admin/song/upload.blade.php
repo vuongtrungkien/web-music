@@ -27,20 +27,25 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Thể Loại</label>
-                        <select name="category_id" class="form-control">
+                        <label>Thể Loại
+                        <select name="category_id" class="form-control" style="width: 500px;">
                             @foreach($categories as $category)
                                 <option value="{{$category->id}}">{{$category->name}}</option>
                             @endforeach
                         </select>
+                        </label>
+                        <span> <a href="{{route('admin.create_category')}}" class="btn btn-primary">Thêm Thể loại </a></span>
+                        <span> <a href="" class="btn btn-info">Sửa Thể Loại </a></span>
                     </div>
                     <div class="form-group">
-                        <label>Ca sĩ </label>
-                        <select name="singer_id" class="form-control">
+                        <label >Ca sĩ
+                        <select name="singer_id" class="form-control" style="width: 540px">
                             @foreach($singers as $singer)
                                 <option value="{{$singer->id}}">{{$singer->name}}</option>
                             @endforeach
-                        </select>
+                        </select></label>
+                       <span> <a href="{{route('admin.create_singer')}}" class="btn btn-primary">Thêm Ca Sĩ </a></span>
+                        <span> <a href="" class="btn btn-info">Sửa Ca Sĩ </a></span>
                     </div>
 
                     <div class="form-group">

@@ -126,7 +126,9 @@ ul {
 .bg-img {
   background-position: center center;
   background-size: cover;
-  background-repeat: no-repeat; }
+    top: -280px;
+  background-repeat: no-repeat;
+}
 
 .jarallax {
   position: relative;
@@ -1589,3 +1591,6 @@ ul {
     padding: 15px; }
 
 /*# sourceMappingURL=style.css.map */
+.banner {
+
+}

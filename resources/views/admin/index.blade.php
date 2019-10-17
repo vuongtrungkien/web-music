@@ -26,7 +26,7 @@
             <nav class="classy-navbar justify-content-between" id="pocaNav">
 
                 <!-- Logo -->
-                <a class="nav-brand" href="index.html"><img style="width: 70px;height: 70px" src="./img/core-img/logo.png" alt=""></a>
+                <a class="nav-brand" href="{{route('index')}}"><img style="width: 70px;height: 70px" src="{{asset('./img/core-img/logo.png')}}" alt=""></a>
 
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
@@ -52,7 +52,7 @@
 
                                 </ul>
                             </li>
-                            <li><a href="./podcast.html">Ca Sĩ</a></li>
+                            <li><a href="{{route('admin.list_singers')}}">Ca Sĩ</a></li>
                             <li><a href="#">Thể Loại</a>
                                 <ul class="dropdown">
                                     <li><a href="./index.html">- Danh sách Thể Loại</a></li>

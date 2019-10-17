@@ -6,6 +6,7 @@ namespace App\Http\Repositories\Impl;
 
 use App\Http\Repositories\Interfaces\SongRepository;
 use App\Song;
+use Illuminate\Support\Facades\DB;
 
 class SongRepositoryImpl implements SongRepository
 {
@@ -28,8 +29,19 @@ class SongRepositoryImpl implements SongRepository
 
     public function getTopSongs($top)
     {
-        return $this->song->orderBy('view','DESC')->limit($top)->get();
+        return $this->song->orderBy('view', 'DESC')->limit($top)->get();
 
+    }
+
+    public function getSongRandom()
+    {
+        return $this->song->inRandomOrder()->limit(1)->get();
+    }
+
+    public function getSongNew($category)
+    {
+        return $this->song->newQuery()->where('category_id',$category)->orderBy('created_at','DESC')
+            ->limit(5)->get();
     }
 
     public function create($object)

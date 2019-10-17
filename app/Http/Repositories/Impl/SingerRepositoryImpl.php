@@ -26,9 +26,9 @@ class SingerRepositoryImpl implements SingerRepository
         // TODO: Implement findById() method.
     }
 
-    public function create($data)
+    public function create($obj)
     {
-        // TODO: Implement create() method.
+        $obj->save();
     }
 
     public function update($data, $object)

@@ -6,7 +6,7 @@
             <nav class="classy-navbar justify-content-between" id="pocaNav">
 
                 <!-- Logo -->
-                <a class="nav-brand" href="{{route('index')}}"><img style="width: 70px; height: 70px" src="{{asset('./img/core-img/logo.png')}}" alt=""></a>
+                <a class="nav-brand" href="{{route('index')}}"><img style="width: 80px; height: 80px" src="{{asset('./storage/img/logo.png')}}" alt=""></a>
 
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
@@ -28,20 +28,20 @@
                             <li><a href="#">Bài Hát</a>
                                 <ul class="dropdown">
                                     <li><a href="./index.html">- Nightcore Việt</a></li>
-                                    <li><a href="./podcast.html">- Nightcore Trung </a></li>
+{{--                                    <li><a href="./podcast.html">- Nightcore Trung </a></li>--}}
                                     <li><a href="./single-podcast.html">- Nightcore Âu mĩ</a></li>
-                                    <li><a href="./about.html">- Nightcore nhật Bản</a></li>
-                                    <li><a href="./blog.html">- Nightcore Hàn Quốc</a></li>
+{{--                                    <li><a href="./about.html">- Nightcore nhật Bản</a></li>--}}
+{{--                                    <li><a href="./blog.html">- Nightcore Hàn Quốc</a></li>--}}
                                 </ul>
                             </li>
                             <li><a href="./podcast.html">Video</a></li>
                             <li><a href="#">BXH</a>
                                 <ul class="dropdown">
                                     <li><a href="./index.html">- Nightcore Việt</a></li>
-                                    <li><a href="./podcast.html">- Nightcore Trung </a></li>
+{{--                                    <li><a href="./podcast.html">- Nightcore Trung </a></li>--}}
                                     <li><a href="./single-podcast.html">- Nightcore Âu mĩ</a></li>
-                                    <li><a href="./about.html">- Nightcore nhật Bản</a></li>
-                                    <li><a href="./blog.html">- Nightcore Hàn Quốc</a></li>
+{{--                                    <li><a href="./about.html">- Nightcore nhật Bản</a></li>--}}
+{{--                                    <li><a href="./blog.html">- Nightcore Hàn Quốc</a></li>--}}
                                 </ul>
                             </li>
                             <li><a href="./contact.html">Contact</a></li>

@@ -24,12 +24,12 @@ class SongRepositoryImpl implements SongRepository
 
     public function findById($id)
     {
-        // TODO: Implement findById() method.
+       return $this->song->find($id);
     }
 
-    public function getTopSongs($top)
+    public function getTopSongs($top,$category)
     {
-        return $this->song->orderBy('view', 'DESC')->limit($top)->get();
+        return $this->song->where('category_id',$category)->orderBy('view', 'DESC')->limit($top)->get();
 
     }
 

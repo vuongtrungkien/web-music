@@ -13,11 +13,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
 
-Route::get('/', 'SongController@getTopOne')->name('index');
+
+Route::prefix('/')->group(function () {
+    Route::get('/', 'SongController@getTopOne')->name('index');
+    Route::get('/play/{song_id}', 'SongController@playSong')->name('song.play');
+});
 
 Auth::routes();
 

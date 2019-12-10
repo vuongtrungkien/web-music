@@ -6,7 +6,7 @@
         <!-- Welcome Slides -->
         <div class="welcome-slides owl-carousel">
 
-            <!-- Single Welcome Slide -->
+          <!-- Single Welcome Slide -->
             <div class="welcome-welcome-slide bg-img bg-overlay"
                  style="background-image: url({{asset('img/bg-img/bgtest.jpg')}});">
                 <div class="container h-100" style="position: relative;top: 150px">
@@ -22,13 +22,13 @@
                             <div class="poca-music-area mt-70 d-flex align-items-center flex-wrap"
                                  data-animation="fadeInUp" data-delay="900ms">
                                 <div class="poca-music-thumbnail">
-                                    <img src="{{asset('./img/core-img/logo2.png')}}" alt="">
+                                    <img src="{{asset('/storage/img/logo2.png')}}" alt="">
 
                                 </div>
                                 <div class="poca-music-content">
 
 
-                                    @foreach($songTopOne as $song)
+                                    @foreach($songRandom as $song)
                                         <span
                                             class="music-published-date">{{@date_format($song->created_at,'d-m-Y')}}</span>
                                         <h2>{{$song->name}} </h2>
@@ -93,19 +93,20 @@
         </div>
     </section>
     <div class="container" style="position: relative;bottom: 250px">
-        <div class="row poca-portfolio">
+        <div class=" poca-portfolio">
+        {{--            <section class=" single_gallery_item entre    ">Nhạc Mới</section>--}}
+        <!-- Single gallery Item -->
 
-            <!-- Single gallery Item -->
             <div class="col-12 col-md-6 single_gallery_item entre wow fadeInUp" data-wow-delay="0.2s">
                 <!-- Welcome Music Area -->
-                <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
-                    <div class="poca-music-thumbnail text-center border-bottom">
+                <div class="poca-music-area style-2 d-flex align-items-center flex-wrap nav-link">
+                    <div class="poca-music-thumbnail text-center  border-bottom">
                         <h2>Nhạc Việt</h2>
                     </div>
-                    <div class="poca-music-content text-left">
-                        <ul>
+                    <div class="poca-music-content text-left ">
+                        <ul class="nav-link">
                             @foreach($songsNewVNI as $song)
-                            <li><a href="">{{$song->name}} - {{$song->singer->name}}</a></li>
+                                <li style="margin-bottom: 3px"><a style="font-size: 18px;" href="{{route('song.play',$song->id)}}">{{$song->name}} - {{$song->singer->name}}</a></li>
                             @endforeach
                         </ul>
 
@@ -115,171 +116,108 @@
             </div>
 
             <!-- Single gallery Item -->
-            <div class="col-12 col-md-6 single_gallery_item entre tutor wow fadeInUp" data-wow-delay="0.2s">
+            <div class="col-12 col-md-6 single_gallery_item entre  wow fadeInUp" data-wow-delay="0.2s">
                 <!-- Welcome Music Area -->
                 <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
                     <div class="poca-music-thumbnail text-center border-bottom">
                         <h2>Nhạc Âu Mĩ</h2>
                     </div>
                     <div class="poca-music-content text-center">
-                        <span class="music-published-date mb-2">December 9, 2018</span>
-                        <h2>Episode 202 - I Want A New Judge!</h2>
-                        <div class="music-meta-data">
-                            <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a>
-                                | <a href="#" class="music-duration">00:02:56</a></p>
-                        </div>
+                        <ul>
+                            @foreach($songsNewUs as $song)
+                                <li style="margin-bottom: 3px"><a style="font-size: 18px" href="{{route('song.play',$song->id)}}">{{$song->name}} - {{$song->singer->name}}</a></li>
+                            @endforeach
+                        </ul>
+
 
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 single_gallery_item entre tutor wow fadeInUp" data-wow-delay="0.2s">
+{{--            <div class="col-12 col-md-6 single_gallery_item entre  wow fadeInUp" data-wow-delay="0.2s">--}}
+
+{{--                <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">--}}
+{{--                    <div class="poca-music-thumbnail text-center border-bottom">--}}
+{{--                        <h2>Nhạc Trung</h2>--}}
+{{--                    </div>--}}
+{{--                    <div class="poca-music-content text-center">--}}
+
+
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+
+
+            <!-- Single gallery Item -->
+            <div class="col-12 col-md-6 single_gallery_item media wow fadeInUp w-100" data-wow-delay="0.2s">
+
+                <div class="poca-music-area style-2 d-flex align-items-center flex-wrap w-100">
+                    <div class="poca-music-thumbnail text-center border-bottom">
+                        <h2>Top NightCore Việt</h2>
+                    </div>
+                    <div class="poca-music-content text-center">
+                        <ul>
+                            @foreach($songsTopVNI as $song)
+                                <li class="text" style="margin-bottom: 3px"><a style="font-size: 18px ;" href="{{route('song.play',$song->id)}}">{{$song->name}} - {{$song->singer->name}}</a></li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Single gallery Item -->
+            <div class="col-12 col-md-6 single_gallery_item tech  wow fadeInUp" data-wow-delay="0.2s">
                 <!-- Welcome Music Area -->
                 <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
                     <div class="poca-music-thumbnail text-center border-bottom">
-                        <h2>Nhạc Trung</h2>
+                        <h2>Top NightCore Âu Mĩ</h2>
                     </div>
                     <div class="poca-music-content text-center">
-                        <span class="music-published-date mb-2">December 9, 2018</span>
-                        <h2>Episode 202 - I Want A New Judge!</h2>
-                        <div class="music-meta-data">
-                            <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a>
-                                | <a href="#" class="music-duration">00:02:56</a></p>
-                        </div>
-
+                        <ul>
+                            @foreach($songsTopUs as $song)
+                                <li style="margin-bottom: 3px"><a style="font-size: 18px" href="{{route('song.play',$song->id)}}">{{$song->name}} - {{$song->singer->name}}</a></li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
             </div>
 
-            <!-- Single gallery Item -->
-            <div class="col-12 col-md-6 single_gallery_item media wow fadeInUp" data-wow-delay="0.2s">
-                <!-- Welcome Music Area -->
-                <div class="poca-music-area style-2 d-flex align-items-center flex-wrap"
-                     style="position: relative;left: 300px">
+            {{--            <div class="col-12 col-md-6 single_gallery_item tech  wow fadeInUp" data-wow-delay="0.2s">--}}
+
+            {{--                <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">--}}
+            {{--                    <div class="poca-music-thumbnail text-center border-bottom">--}}
+            {{--                        <h2>Top NightCore Trung</h2>--}}
+            {{--                    </div>--}}
+            {{--                    <div class="poca-music-content text-center">--}}
+
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
+
+            <div class="col-12 col-md-6 single_gallery_item tech  wow fadeInUp" data-wow-delay="0.2s">
+
+                <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
                     <div class="poca-music-thumbnail text-center border-bottom">
-                        <h2>Được Xem nhiều Nhất</h2>
+                        <h2>Top NightCore Hàn Quốc</h2>
                     </div>
                     <div class="poca-music-content text-center">
-                        <span class="music-published-date mb-2">December 9, 2018</span>
-                        <h2>Episode 203 - The Last Blockbuster</h2>
-                        <div class="music-meta-data">
-                            <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a>
-                                | <a href="#" class="music-duration">00:02:56</a></p>
-                        </div>
-                        <!-- Music Player -->
-                        <div class="poca-music-player">
-                            <audio preload="auto" controls>
-                                <source src="audio/dummy-audio.mp3">
-                            </audio>
-                        </div>
-                        <!-- Likes, Share & Download -->
-                        <div class="likes-share-download d-flex align-items-center justify-content-between">
-                            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
-                            <div>
-                                <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i>
-                                    Share(04)</a>
-                                <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download (12)</a>
-                            </div>
-                        </div>
+                        <h2>Chưa Có Bài Hát </h2>
                     </div>
                 </div>
             </div>
 
             <!-- Single gallery Item -->
-        {{--            <div class="col-12 col-md-6 single_gallery_item media wow fadeInUp" data-wow-delay="0.2s">--}}
-        {{--                <!-- Welcome Music Area -->--}}
-        {{--                <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">--}}
-        {{--                    <div class="poca-music-thumbnail text-center border-bottom">--}}
-        {{--                        <h2>Được Yêu Thích Nhất</h2>--}}
-        {{--                    </div>--}}
-        {{--                    <div class="poca-music-content text-center">--}}
-        {{--                        <span class="music-published-date mb-2">December 9, 2018</span>--}}
-        {{--                        <h2>Episode 204 - The Last Blockbuster</h2>--}}
-        {{--                        <div class="music-meta-data">--}}
-        {{--                            <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a> | <a href="#" class="music-duration">00:02:56</a></p>--}}
-        {{--                        </div>--}}
-        {{--                        <!-- Music Player -->--}}
-        {{--                        <div class="poca-music-player">--}}
-        {{--                            <audio preload="auto" controls>--}}
-        {{--                                <source src="audio/dummy-audio.mp3">--}}
-        {{--                            </audio>--}}
-        {{--                        </div>--}}
-        {{--                        <!-- Likes, Share & Download -->--}}
-        {{--                        <div class="likes-share-download d-flex align-items-center justify-content-between">--}}
-        {{--                            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>--}}
-        {{--                            <div>--}}
-        {{--                                <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i> Share(04)</a>--}}
-        {{--                                <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download (12)</a>--}}
-        {{--                            </div>--}}
-        {{--                        </div>--}}
-        {{--                    </div>--}}
-        {{--                </div>--}}
-        {{--            </div>--}}
+            {{--            <div class="col-12 col-md-6 single_gallery_item tutor wow fadeInUp" data-wow-delay="0.2s">--}}
+            {{--                <!-- Welcome Music Area -->--}}
+            {{--                <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">--}}
+            {{--                    <div class="poca-music-thumbnail">--}}
 
-        <!-- Single gallery Item -->
-            <div class="col-12 col-md-6 single_gallery_item tech tutor wow fadeInUp" data-wow-delay="0.2s">
-                <!-- Welcome Music Area -->
-                <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
-                    <div class="poca-music-thumbnail">
-                        <img src="./img/bg-img/9.jpg" alt="">
-                    </div>
-                    <div class="poca-music-content text-center">
-                        <span class="music-published-date mb-2">December 9, 2018</span>
-                        <h2>Episode 205 - See Ya In Three!</h2>
-                        <div class="music-meta-data">
-                            <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a>
-                                | <a href="#" class="music-duration">00:02:56</a></p>
-                        </div>
-                        <!-- Music Player -->
-                        <div class="poca-music-player">
-                            <audio preload="auto" controls>
-                                <source src="audio/dummy-audio.mp3">
-                            </audio>
-                        </div>
-                        <!-- Likes, Share & Download -->
-                        <div class="likes-share-download d-flex align-items-center justify-content-between">
-                            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
-                            <div>
-                                <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i>
-                                    Share(04)</a>
-                                <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download (12)</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single gallery Item -->
-            <div class="col-12 col-md-6 single_gallery_item tech wow fadeInUp" data-wow-delay="0.2s">
-                <!-- Welcome Music Area -->
-                <div class="poca-music-area style-2 d-flex align-items-center flex-wrap">
-                    <div class="poca-music-thumbnail">
-                        <img src="./img/bg-img/10.jpg" alt="">
-                    </div>
-                    <div class="poca-music-content text-center">
-                        <span class="music-published-date mb-2">December 9, 2018</span>
-                        <h2>Episode 206 - Let’s Get This Party Started!</h2>
-                        <div class="music-meta-data">
-                            <p>By <a href="#" class="music-author">Admin</a> | <a href="#" class="music-catagory">Tutorials</a>
-                                | <a href="#" class="music-duration">00:02:56</a></p>
-                        </div>
-                        <!-- Music Player -->
-                        <div class="poca-music-player">
-                            <audio preload="auto" controls>
-                                <source src="audio/dummy-audio.mp3">
-                            </audio>
-                        </div>
-                        <!-- Likes, Share & Download -->
-                        <div class="likes-share-download d-flex align-items-center justify-content-between">
-                            <a href="#"><i class="fa fa-heart" aria-hidden="true"></i> Like (29)</a>
-                            <div>
-                                <a href="#" class="mr-4"><i class="fa fa-share-alt" aria-hidden="true"></i>
-                                    Share(04)</a>
-                                <a href="#"><i class="fa fa-download" aria-hidden="true"></i> Download (12)</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{--                    </div>--}}
+            {{--                    <div class="poca-music-content text-center">--}}
+            {{--                        --}}
+            {{--                    </div>--}}
+            {{--                </div>--}}
+            {{--            </div>--}}
 
         </div>
     </div>

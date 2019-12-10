@@ -10,7 +10,7 @@
     <title>@yield('title')</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="./img/core-img/logo1.png">
+    <link rel="icon" href="{{asset('./storage/img/logo.png')}}">
 
     <!-- Core Stylesheet -->
     <link rel="stylesheet" href="{{asset('style.css')}}">

@@ -35,12 +35,12 @@ class SongServiceImpl implements SongService
 
     public function findById($id)
     {
-        // TODO: Implement findById() method.
+        return $this->songRepository->findById($id);
     }
 
-    public function getTopSongs($top)
+    public function getTopSongs($top,$category)
     {
-        return $this->songRepository->getTopSongs($top);
+        return $this->songRepository->getTopSongs($top,$category);
     }
 
     public function create($data)

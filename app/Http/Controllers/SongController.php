@@ -22,21 +22,28 @@ class SongController extends Controller implements ParametersInterface
     public function getTopOne(Request $request)
     {
 
-//        $songTopOne = $this->songService->getTopSongs(1);
-       $songTopOne = $this->songService->getSongRandom();
+        $songsTopVNI = $this->songService->getTopSongs(5, self::VIETNAM);
+        $songsTopUs = $this->songService->getTopSongs(5, self::US_UK);
+        $songRandom = $this->songService->getSongRandom();
         $songsNewVNI = $this->songService->getSongNew(ParametersInterface::VIETNAM);
+        $songsNewUs = $this->songService->getSongNew(ParametersInterface::US_UK);
 
 
-
-        return view('index', compact('songTopOne','songsNewVNI'));
-    }
-
-    public function store(Request $request){
-
-
+        return view('index', compact('songRandom', 'songsNewVNI', 'songsNewUs', 'songsTopVNI', 'songsTopUs'));
     }
 
 
+    public function playSong($song_id)
+    {
+        $song = $this->songService->findById($song_id);
+        return view('play',compact('song'));
+    }
+
+    public function store(Request $request)
+    {
+
+
+    }
 
 
 }
